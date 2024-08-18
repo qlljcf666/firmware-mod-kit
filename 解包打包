@@ -1,0 +1,25 @@
+# For Ubuntu 需要安装的依赖库文件  
+$ sudo apt-get install git build-essential zlib1g-dev liblzma-dev python-magic  
+git clone https://github.com/mirror/firmware-mod-kit.git  
+# 进入源码目录
+cd firmware-mod-kit/src
+
+# 执行configure文件生成Makefile文件然后make编译生成可执行文件
+./configure && make
+
+解包固件提取内核和文件系统
+$ ./extract-firmware.sh firmware.bin
+重打包解包的内核和文件系统重建固件文件
+$ ./build-firmware.sh [-nopad] [-min]
+
+extract-firmware.sh 解包固件
+
+build-firmware.sh 重新封包
+
+check_for_upgrade.sh 检查更新
+进行如下解压。
+
+ ./unsquashfs_all.sh  fireware/120200.squashfs 
+
+  
+
